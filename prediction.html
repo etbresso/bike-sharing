@@ -1,0 +1,220 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>BikeSharing Prédiction</title>
+<!--Import Google Icon Font-->
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="css/materialize.css"
+	media="screen,projection" />
+
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body  onLoad="prediction()">
+	<!--Import jQuery before materialize.js-->
+	<script type="text/javascript"
+		src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+		
+	</script>
+	<script src="js/picker.date.js"></script>
+	<script src="js/picker.time.js"></script>
+    
+	<script>
+		$('.datepicker').pickadate(
+				{
+					selectMonths : true, // Creates a dropdown to control month
+					selectYears : 15, // Creates a dropdown of 15 years to control year
+					editable : true,
+					onStart : function() {
+						var date = new Date()
+						this.setDate(date.getFullYear(), date.getMonth() + 1,
+								date.getDate())
+					}
+				});
+		$('.timepicker').pickatime({
+			editable : true
+		});
+		$(document).ready(function() {
+			$('select').material_select();
+		});
+
+		$(document).ready(function() {
+			$('select').material_select();
+		});
+        
+         $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+        
+         $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+        
+	</script>
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo right">BikeSharing</a>
+			<ul id="nav-mobile" class="left hide-on-med-and-down">
+				<li class="active"><a href="prediction.html">Prédiction</a></li>
+				<li><a href=""></a></li>
+			</ul>
+		</div>
+	</nav>
+    
+   
+    
+    <!--i class="material-icons">wb_sunny</i-->
+    <!--i class="material-icons">wb_cloudy</i-->
+    <!--i class="material-icons">flash_on</i-->
+    
+    
+
+    
+
+
+	<!-- Navbar goes here -->
+
+	<!-- Page Layout here -->
+	<!--div class="row">
+
+
+		<div class="col s12 m8 l9">
+
+
+
+			<div class="col s12" id="image-map"></div>
+
+
+		</div>
+
+		<div class="col s12 m4 l3">
+			<div class="col s10" id="dates"></div>
+			<br>
+			<div class="col s1 ">
+
+				<a class="btn-floating light-blue darken-4 " id="refreshBtn"
+					title="Rafraichir les données"> <i class="material-icons">cached</i>
+				</a>
+			</div>
+
+			<hr
+				style="width: 100%; color: blue; background-color: blue; height: 3px;" />
+			<div class="col s12">
+				<h5>Filtres</h5>
+			</div>
+			<div class="col s12">
+				<form action="exec.php" method="post"
+					id="datesForm">
+
+					<div class="col s12">
+						<p>Période d'observation</p>
+					</div>
+
+					<div class="col s7">
+						<label for="dateStart">Date de début</label> <input type="date"
+							class="datepicker" id="dateStart" name="dateStart" required>
+					</div>
+					<div class="col s5">
+						<label for="timeStart">Heure de début</label> <input type="time"
+							class="timepicker" name="timeStart" required>
+					</div>
+
+
+					<div class="col s7">
+						<label for="timeStart">Date de fin</label> <input type="date"
+							class="datepicker" name="dateEnd" required>
+					</div>
+					<div class="col s5">
+						<label for="timeStart">Heure de fin</label> <input type="time"
+							class="timepicker" name="timeEnd" required>
+					</div>
+
+					<div class="col s1 push-s10">
+
+						<button class="waves-effect waves-light btn" type="submit"
+							id="btnSubmit" title="Appliquer le filtre">
+							<i class="material-icons">send</i>
+						</button>
+
+					</div>
+				</form>
+				<div class="col s12"></div>
+				<hr width="100%" />
+				<div class="col s12"></div>
+				
+			</div>
+		</div>
+	</div-->
+    
+      <div class="parallax-container">
+    <div class="parallax"><img src="pictures/bike.jpg"></div>
+  </div>
+  <div class="section white">
+    <div class="row container">
+      <div class="container">
+        <ul class="collapsible popout" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header active" id='today'></div>
+      <div class="collapsible-body" id="table"></div>
+    </li>
+    <li>
+      <div class="collapsible-header" id='today1'></div>
+      <div class="collapsible-body" id="table1"></div>
+    </li>
+    <li>
+      <div class="collapsible-header" id='today2'></div>
+      <div class="collapsible-body" id="table2"></div>
+    </li>
+            <li>
+      <div class="collapsible-header" id='today3'></div>
+      <div class="collapsible-body" id="table3"></div>
+    </li>
+            <li>
+      <div class="collapsible-header" id='today4'></div>
+      <div class="collapsible-body" id="table4"></div>
+    </li>
+  </ul>
+      </div>
+    </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="pictures/bike3.jpg"></div>
+  </div>
+    
+     <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Sources</h5>
+                  <ul>
+                  <li><a class="grey-text text-lighten-3" href="http://www.capitalbikeshare.com/">Capital BikeShare</a></li>
+                  
+                </ul>
+               
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text"> <br></h5>
+                  <ul>
+                  
+                  <li><a class="grey-text text-lighten-3" href="https://archive.ics.uci.edu/ml/datasets/Bike+Sharing+Dataset#">UCI Machine Learning Repository</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © Claire Billet - Etienne Bresso - Clémence Moulin
+            </div>
+          </div>
+        </footer>
+            
+    
+        <script type="text/javascript" src="js/index.js"></script>
+    
+</body>
+</html>

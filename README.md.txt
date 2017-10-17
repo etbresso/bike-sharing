@@ -1,0 +1,1 @@
+Projet réalisé dans le cadre du cours d'intelligence artificielle avec Claire BILLET et Clémence MOULIN 

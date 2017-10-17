@@ -1,0 +1,24 @@
+sudo apt install apache2 php mysql-server libapache2-mod-php php-mysql
+sudo apt-get install r-base-core
+sudo apt-get install r-base
+sudo apt-get install r-base-dev
+
+sudo apt-get install wajig
+wajig install libgtk2.0-dev libxml2-dev
+
+
+sudo su - -c "R -e \"install.packages('rattle', repos='http://cran.rstudio.com/')\""
+sudo su - -c "R -e \"install.packages('rpart.plot', repos='http://cran.rstudio.com/')\""
+sudo su - -c "R -e \"install.packages('rpart', repos='http://cran.rstudio.com/')\""
+sudo su - -c "R -e \"install.packages('RColorBrewer', repos='http://cran.rstudio.com/')\""
+sudo su - -c "R -e \"install.packages('randomForest', repos='http://cran.rstudio.com/')\""
+sudo su - -c "R -e \"install.packages('compare', repos='http://cran.rstudio.com/')\""
+
+
+sudo cp /home/etienne/Téléchargements/bike.R bike.R
+sudo cp /home/etienne/Téléchargements/day.csv day.csv
+sudo cp /home/etienne/Téléchargements/hour.csv hour.csv
+sudo cp /home/etienne/Téléchargements/exec.php exec.php
+
+
+sudo chmod -R 777 html
